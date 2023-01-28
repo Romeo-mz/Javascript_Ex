@@ -140,5 +140,72 @@ function betterPrecision(num,precision)
         return(num.toPrecision(precision));
     }
 }
-*/
+
 //Exercice 10
+function f(x) {return x ** 2 + 2 * x - 15}
+
+function bisection(f,a,b){
+    const epsilon = 0.0001;
+    h = (b-a) /2;
+    if(f(a) < 0 && f(a) < f(b) || f(b) < 0 && f(b) < f(a)){
+
+        while(f(h) - epsilon >= 0){
+            b = h;
+            h = (b-a)/2
+        }
+        return(h);
+    }
+
+}
+console.log(bisection(f,100, 1000));
+
+console.log(Math.min(3, null, 10, 2));
+
+//Exercice 11
+
+function not(bin){
+    var tmp;
+    for(var i = 0; i < bin.length; i++){
+        
+        if(bin[i] === '0'){
+            tmp += '1';
+        }
+        else{
+            tmp += '0';
+        }
+    }
+    return tmp;
+}
+
+//Exercice 12
+
+function strToUpper(str){
+    var up;
+    for(var i = 0; i < str.length; i++){
+        if(str.charCodeAt(i) <= 91){
+            up += str[i];
+        }
+    }
+    return up;
+}
+
+//Exercice 13
+
+function logLetterFrequency(str){
+    var letterCount = [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   ];
+
+   for(var i = 0; i < str.length; i++){
+    
+    if(str.charCodeAt(i) <= 91){
+        letterCount[str.charCodeAt(i) - 65] += 1;
+    }
+    else{
+        letterCount[str.charCodeAt(i) - 97] += 1;
+    }
+}
+   return(letterCount);
+}
+*/
