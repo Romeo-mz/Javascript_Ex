@@ -85,12 +85,38 @@ var areAllGreaterThanZero = array.every(function(element) {
   return element > 0;
 });
 
-console.log(areAllGreaterThanZero
+console.log(areAllGreaterThanZero)
 
 //Filtering items via filter()
+var numbers = [1, 2, 3, 4, 5];
+
+// Filter: Returns a new array with all elements that pass the test
+var evenNumbers = numbers.filter(function(element) {
+  return element % 2 === 0;
+});
+console.log(evenNumbers); // [2, 4]
 
 //Joining array elements using join()
+var words = ["Hello", "world"];
+
+// Join: Returns a string joined by a separator
+var sentence = words.join(" ");
+console.log(sentence); // "Hello world"
 
 //Mapping to a new array via map()
+var numbers = [1, 2, 3, 4, 5];
+
+// Map: Returns a new array with the results of calling a provided function on every element
+var doubledNumbers = numbers.map(function(element) {
+  return element * 2;
+});
+console.log(doubledNumbers); // [2, 4, 6, 8, 10]
 
 //Sorting an array using sort()
+var numbers = [3, 1, 5, 2, 4];
+
+// Sort: Sorts the elements of an array in place and returns the array
+var sortedNumbers = numbers.sort(function(a, b) {
+  return a - b;
+});
+console.log(sortedNumbers); // [1, 2, 3, 4, 5]
