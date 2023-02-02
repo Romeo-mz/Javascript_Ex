@@ -208,4 +208,185 @@ function logLetterFrequency(str){
 }
    return(letterCount);
 }
-*/
+
+//Task
+function getAllIndexes(str,substr){
+    var index = str.indexOf(substr);
+
+    if(index === -1)return -1
+    
+    var indexes =[];
+    while(index !== 1 ){
+        indexes.push(index);
+        index = str.indexOf(substr, i + 1);
+    }
+}
+
+//Exercice 14
+
+var hyphenated = prompt("Enter an hyphenated word");
+function hyph(hyphenated){
+    if(hyphenated.indexOf("-") === -1){
+        alert("Invalid input !");
+    }
+    else{
+        var split = hyphenated.split('-');
+        for(var i = 0; i < split.length; i++){
+            document.write(split[i] + '<br>');
+        }
+    }
+}
+
+hyph(hyphenated);
+
+//Exercice 15
+
+function endsWithPolyfill(str,substr,length){
+    if(str[length - 1] === substr){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+//Exercice 16
+
+function toTitleCase(str){
+    var uppers = str.split(' ');
+    
+    for(var i = 0; i < uppers.length; i++){
+        uppers[i] = uppers[i].substr(0,1).toUpperCase() + uppers[i].substr(1);
+        
+        
+    }
+    
+    return uppers;
+}
+
+
+//Exercice 17
+
+function getWords(str){
+    if(str === ' ')return [];
+
+    var index = 0;
+    var words = [];
+    for(var i = 0; i < str.length; i++){
+        if('A' <= str[i] && str[i] <= 'Z'){
+            words.push(str.slice(index,i));
+            index = i
+        }
+    }
+    words.push(str.slice(index));
+    return words;
+    
+}
+
+
+var str = 'aZZZbZZZc';
+console.log(str.split('ZZ'))
+
+//Exercice 18
+
+function grade(note){
+    if(note < 40){
+        return "Invalid input";
+    }
+    else if(note >= 40 && note <= 49){
+        return "Grade E"
+    }
+    else if(note >= 50 && note <= 59){
+        return "Grade D"
+    }
+    else if(note >= 60 && note <= 74){
+        return "Grade C"
+    }
+    else if(note >= 75 && note <= 89){
+        return "Grade B"
+    }
+    else if(note >= 90 && note <= 100){
+        return "Grade A"
+    }   
+}
+console.log(Boolean(false))
+
+//Exercice 20
+
+function gcd(num,num2){
+    var divide;
+    for(var i = 0; i < num; i++){
+        if(num % i === 0 && num2 % i === 0){
+            divide = i;
+        }
+    }
+    return divide;
+}
+
+
+function selectionSort(arr) {
+    var minIndex;
+    var temp;
+    var length = arr.length;
+ 
+    for (var i = 0; i < length; i++) {
+       minIndex = i;
+ 
+       for (var j = i; j < length; j++) {
+          if (arr[j] < arr[minIndex]) {
+             minIndex = j;
+          }
+       }
+ 
+       temp = arr[minIndex];
+       arr[minIndex] = arr[i];
+       arr[i] = temp;
+    }
+ }
+
+//Exercice 21
+
+function collatz(int){
+    var nums = [int];
+    while(int !== 1){
+        if(int % 2 === 0){
+            int = int / 2;
+            nums.push(int);
+        }
+        else{
+            int = 3*int + 1;
+            nums.push(int);
+        }
+    }
+    return(nums);
+}
+
+//Exercice 22
+
+function arrayReverse(arr){
+    var tmp = [];
+    
+    for(var i = arr.length - 1; i > -1; i--){
+        console.log(i);
+        tmp.push(arr[i]);
+    }
+    return tmp;
+}
+
+
+//Array splice method
+var arr = [1, 50, -6, -20, 22];
+console.log(arr.splice(2,2));
+ 
+
+//Task
+var nums = [1, 10, 5, 33, 198, 0, 5, 8];
+
+function isEven(num){
+    if(num % 2 === 0){
+        return true;
+    }
+}
+
+console.log(nums.filter(isEven));
+*/ 
