@@ -389,4 +389,110 @@ function isEven(num){
 }
 
 console.log(nums.filter(isEven));
-*/ 
+ 
+//Exercice 28
+//Matrix addition/multiplication
+
+function add(a,b){
+    var sum = [];
+    for(var i = 0; i < a.length; i++){
+        sum.push([]);
+        for(var j = 0; j < a[0].length; j++){
+            sum[i][j] = a[i][j] + b[i][j];
+        }
+    }
+    return sum;
+}
+a = [[1,2],[3,4]];
+b = [[3,4],[3,4]];
+
+function multiply(a, b) {
+    var m = a.length,
+        n = a[0].length,
+        p = b[0].length;
+ 
+    var product = []; // this represents a x b
+ 
+    for (var i = 0; i < m; i++) {
+       product.push([]);
+       for (var j = 0; j < p; j++) {
+          var sum = 0;
+          for (var k = 0; k < n; k++) {
+             sum += a[i][k] * b[k][j]
+          }
+          product[i].push(sum);
+       }
+    }
+ }
+
+//Exercice 29
+//Matrix Rotation
+a = [[1,2],[3,4]];
+
+function rotateBy90(matrix) {
+    var n = matrix.length;
+    var matrixCopy = [];
+
+    for (var i = 0; i < n; i++) {
+        matrixCopy.push([]); // add a row
+        for (var j = 0; j < n; j++) {
+            matrixCopy[i].push(matrix[i][j]); // add new entry
+        }
+    }
+                    
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < n; j++) {
+            matrix[i][j] = matrixCopy[n - j - 1][i];
+        }
+    }
+
+    return matrix;
+}
+ 
+//Exercice 30
+//Binary Search
+function binarySearch(val, arr){
+    arr.sort(function(a,b) {return a - b;});
+    
+    var left = 0;
+    var right = arr.length - 1;
+    var mid;
+
+    while(left <= right){
+        mid = Math.floor((left + right) / 2);
+        if(arr[mid] === val){
+            return true;
+        }
+        else if(arr[mid] < val){
+            left = mid + 1;
+        }
+        else{
+            right = mid - 1;
+        }
+    }
+    return false;
+}
+
+var test = Array(10);
+console.log([1, 2] instanceof Array);
+
+function f() {
+    console.log(arguments);
+ }
+ 
+ f(10);
+ f(10, 'Hello World!');
+ f(10, 20, 'Hello World!');
+ f(true, false, 50, 40, 30);
+*/
+ var a = 'static';
+
+function f1() {
+   console.log(a);
+}
+
+function f2() {
+   var a = 'dynamic';
+   f1();
+}
+console.dir(f1);
