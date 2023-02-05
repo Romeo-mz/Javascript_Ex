@@ -484,7 +484,7 @@ function f() {
  f(10, 'Hello World!');
  f(10, 20, 'Hello World!');
  f(true, false, 50, 40, 30);
-*/
+
  var a = 'static';
 
 function f1() {
@@ -496,3 +496,42 @@ function f2() {
    f1();
 }
 console.dir(f1);
+
+//Exercice 33
+//Euclidian Algorithm
+
+function gcd(a,b){
+
+    if(b === 0){
+        return a;
+    }
+
+    else{
+        return gcd(b, a % b);
+    }
+}
+
+//Task
+var point = { x: 0, y: 0 };
+
+for (var p in point) {
+   console.log(`${p} ` + ` => ` + point[p]);
+}
+//Exemple fonction setters
+function Point(x = 0, y = 0) {
+   this.x = x;
+   this.y = y;
+
+   this.setTo = function(x, y) {
+      this.x = x;
+      this.y = y;
+   }
+}
+
+var p1 = new Point(-2, 8);
+
+// Reposition p1 to (1, 5)
+p1.setTo(1, 5);
+
+console.log(p1);
+*/

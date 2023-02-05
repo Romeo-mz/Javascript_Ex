@@ -120,3 +120,33 @@ var sortedNumbers = numbers.sort(function(a, b) {
   return a - b;
 });
 console.log(sortedNumbers); // [1, 2, 3, 4, 5]
+
+//Object proprety Attributes
+/*
+
+    When a property is writable (regardless of the value of other attributes), 
+    we could change its [[Value]] manually or via a property assignment expression, for e.g. o.p = 10. Simple!
+
+    When a property is non-writable (regardless of the value of other attributes), 
+    we could not change its [[Value]] via a property assignment expression, for e.g. o.p = 10. Simple!
+
+    When a property is configurable and writable, 
+    essentially all operations are possible on the property. Simple!
+
+    When a property is configurable but non-writable, 
+    we couldn't use a property assignment expression, 
+    for e.g. o.p = 10, to change its value. This follows from 2). 
+    However, all other operations are still possible on the property 
+    including manually changing [[Value]] using Object.defineProperty(). 
+    This follows from 3). Simple!
+
+    When a property is non-configurable and an accessor property,
+    no attribute could be changed. Simple!
+
+    When a property is non-configurable and non-writable, 
+    no attribute could be changed. Simple!
+
+    When a property is non-configurable but writable, 
+    no attribute could be changed except for [[Value]], as mentioned in 1), 
+    and [[Writable]], to make the property even more strict. Simple!
+*/
