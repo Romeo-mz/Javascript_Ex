@@ -121,6 +121,13 @@ var sortedNumbers = numbers.sort(function(a, b) {
 });
 console.log(sortedNumbers); // [1, 2, 3, 4, 5]
 
+//Reduce : reduce an array to a single data
+
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((acc, cur) => acc + cur, 0);
+console.log(sum); // 10
+
+
 //Object proprety Attributes
 /*
 
